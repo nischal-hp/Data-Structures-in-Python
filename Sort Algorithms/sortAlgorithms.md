@@ -38,3 +38,56 @@ Best Case : O(n) comparisions and O(1) swaps.
 Space : O(1), or O(n) depending on implementation.
 
 It is only used for smaller list sorting, due to large time complexity. But the implementation is simple in Python.
+
+## Quick Sort : Divide and Conquer
+Here, we choose a pivot element first. All elements to the left of pivot should be lesser than it.
+All elements to the right of it, should be greater than it.
+Once pivot is in the right position, it will be sorted.
+Pick a different pivot in the left subarray and recursively repeat the steps until all elements are sorted.
+Same goes with the right subarray.
+
+Hence, by using partitioning technique we esentially divide the array into two; and thus follow the divide and conquer approach.
+There are 2 types of partitioning techniques: 
+1) Hoare Partition - British Scientist who invented Quick Sort. The original method.
+2) Lomuto Partition
+
+# Hoare Partition
+Any element can be chosen as the pivot element. Lets choose the left most element as pivot element.
+Two pointers are then used, start pointer - element next to pivot element.
+end pointer - last element of array.
+Start with start pointer, keep incrementing it until we find an element which is greater than pivot element.
+Stop once we find. Then start decrementing the end pointer, until we find an element which is lesser than pivot element.
+if both conditions are satisfied, swap elements at start and end pointer locations. 
+Continue the process from the same locations; dont reset the pointers.
+We stop the process when end crosses over the start pointer. At this step, swap the pivot element with the end element.
+Now we will see that all elements to left of pivot are less than it, and all elements to right of pivot are greater than it.
+
+# Lomuto Partition
+Choose last element as pivot element. Then we start p index(partition index) from the first. 
+We go on iterating until we find an element which is greater than pivot.
+Stop at this place. Now start an i index which starts from p index, and goes on incrementing
+until we find a value which is less than or equal to the value of pivot.
+Now swap the 2 elements. Continue incrementing p index till the end of array.
+By the end of it, we would have the pivot element at the right position. 
+
+Average Time: O(nlogn)
+Worst case : O(n^2), when the array is already sorted
+
+## Merge Sort 
+This works on Divide and Conquer approach.
+The underlying working is based on merging two sorted arrays into a single sorted array.
+Take the first element of two sorted arrays. Compare them and put the lowest out of them in the new sorted array.
+Increment the counter in the array which had the lowest element. Keep repeating the process until we are done with
+all the elements in both the arrays.
+
+Since array with single element is sorted. The first step is to divide the unsorted array into single element arrays.
+Next we go on combining two at a time, to go on building the sorted array.
+
+We can create another array to store the sorted elements. But a more efficient way would be to use the original array
+and modify it in-place.
+
+Time Complexity : O(nlogn)
+
+This is used by Tim Sort, which is the default sort we get with python. Tim Sort is a hybrid sort algorithm
+which uses a combination of Merge Sort and Insertion Sort, to work well with the real world data.
+
