@@ -91,3 +91,35 @@ Time Complexity : O(nlogn)
 This is used by Tim Sort, which is the default sort we get with python. Tim Sort is a hybrid sort algorithm
 which uses a combination of Merge Sort and Insertion Sort, to work well with the real world data.
 
+## Shell Sort
+This is an optimization over Insertion sort. The issues with Insertion sort are :
+1) If there is a lower value towards the right side of the pointer, then we will end doing lot of comparisions and swaps.
+Have to compare with each value. Once found the right place, have to swap other elements and move them up a place in the array.
+
+The intuition for Shell Sort is to have heavier elements on right hand side and lesser elements on left hand side.
+They might not necessarily be sorted, but this will help us later in the sorting process.
+
+# Algorithm:
+1. Start with a gap of n/2 and sort the sub-arrays. (Ex: For an array with [3,4,1,2] and gap=2. We choose alternate elements for the subarray. Sort elements 1 and 3; then elements 2 and 4. The final sorted array in this case is [1,2,3,4])
+2. Go on reducing gap by n/2 and keep on sorting the subarrays. (i.e n/4, n/8 and so on).
+3. Last iteration should have gap=1, which is same as Insertion sort.
+
+# Time Complexity:
+Worst Case : O(n^2) (worst known worst case gap sequence)
+O(nlog^2n) (best known worst case gap sequence)
+
+Best Case : O(nlogn) (most gap sequences)
+O(nlog^2n) (best known worst case gap sequence)
+
+## Selection Sort
+FOr the first index, choose the minimum element from the remaining array, and swap the 2 elements.
+For second index, choose the minimum element from the unsorted array, and swap the 2 elements.
+Continue the same process, till the end of the array.
+
+# Time Complexity:
+O(n^2), since we will have 2 for loops
+
+
+
+
+

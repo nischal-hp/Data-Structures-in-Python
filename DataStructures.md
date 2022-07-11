@@ -158,3 +158,17 @@ Each path can be represented as a tuple of start and end nodes.
 ## Difference Between Tree and Graph
 There can be only one path between two nodes in a Tree. Hence, Tree is a special type of graph.
 Graphs and Trees are recursive data structures. So the algorithm used on them, should also be a recursive function.
+
+# Recursion Concept
+1. Divide big problem into small and simple problem
+2. Find a base condition with a simple answer
+3. Return or roll back answer from base condition to solve all the other sub-problems.
+
+Ex : To find the sum of numbers from 1 to 5.
+This can be split into smaller subproblems as shown below : 
+1. 5+ sum of nos from 1 to 4
+2. 4+ sum of nos from 1 to 3
+3. 3+ sum of nos from 1 to 2
+4. 2+ sum of nos from 1 to 1,
+we have arrived at the base case, which is sum of nos from 1 to 1, which is 1.
+Thus by rolling back the answer from base case, we can solve the other sub-problems too.
