@@ -143,6 +143,27 @@ Alternate Approach :
 1) Take maximum value from left subtree
 2) Delete duplicate node in left subtree
 
+# AVL Tree
+AVL tree is a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtrees for any node cannot be more than one.
+
+# Red-Black Tree
+A red-black tree is a kind of self-balancing binary search tree where each node has an extra bit, and that bit is often interpreted as the color (red or black). These colors are used to ensure that the tree remains balanced during insertions and deletions. 
+
+Although the balance of the tree is not perfect, it is good enough to reduce the searching time and maintain it around O(log n) time, where n is the total number of elements in the tree.
+
+Rules That Every Red-Black Tree Follows: 
+1. Every node has a color either red or black.
+2. The root of the tree is always black.
+3. There are no two adjacent red nodes (A red node cannot have a red parent or red child).
+4. Every path from a node (including root) to any of its descendants’ NULL nodes has the same number of black nodes.
+5. All leaf (NULL) nodes are black nodes.
+
+# N-ary Tree
+An n-ary tree is a tree in which each node can have a variable number of children, not limited to two as in a binary tree. In an n-ary tree, a node can have up to n children.
+
+# Trie (Prefix Tree)
+A trie, also known as a prefix tree, is a tree data structure used for efficient retrieval of keys in a dataset of strings. Each node in a trie represents a common prefix of a set of strings.
+
 # Graph
 Ex: 1) FB friend list is maintained through graph. Each node is a person. All the person's friends are connected to this node,
 via an undirected edge. This can used for Friend Suggestions, using mutual friends.
@@ -154,6 +175,9 @@ If the edges have a weight, it is called Weighted Graph.
 
 ## For Coding Graph in Python : 
 Each path can be represented as a tuple of start and end nodes.
+
+## Different Types of Graphs
+Directed, Undirected, Weighted, Unweighted, Cyclic, Acyclic, Complete (every node is directly connected to every other node), Bipartite (A graph in which the vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set.), Trees, Sparse Graphs, Dense Graphs.
 
 ## Difference Between Tree and Graph
 There can be only one path between two nodes in a Tree. Hence, Tree is a special type of graph.
