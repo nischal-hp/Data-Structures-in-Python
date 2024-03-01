@@ -196,3 +196,53 @@ This can be split into smaller subproblems as shown below :
 4. 2+ sum of nos from 1 to 1,
 we have arrived at the base case, which is sum of nos from 1 to 1, which is 1.
 Thus by rolling back the answer from base case, we can solve the other sub-problems too.
+
+# Heap queue (or heapq) in Python
+Heap data structure is mainly used to represent a priority queue. In Python, it is available using the “heapq” module. The property of this data structure in Python is that each time the smallest heap element is popped(min-heap). Whenever elements are pushed or popped, heap structure is maintained. The heap[0] element also returns the smallest element each time.
+
+There is also a max heap that can be constructed by negating the element values that will be stored in the heap.
+
+The code below creates a minimum heap:
+
+import heapq
+heap = []
+heapq.heappush(heap, 3)
+heapq.heappush(heap, 1)
+heapq.heappush(heap, 2)
+
+print(heap) // 1,2,3
+
+In contrast, a max heap can be made with the following code:
+
+import heapq
+heap = []
+heapq.heappush(heap, -3)
+heapq.heappush(heap, -8)
+heapq.heappush(heap, -1)
+print([-x for x in heap])  // [8, 3, 1]
+
+## Advantages of using a heap queue (or heapq) in Python:
+1. Efficient: A heap queue is a highly efficient data structure for managing priority queues and heaps in Python. It provides logarithmic time complexity for many operations, making it a popular choice for many applications.
+2. Space-efficient: Heap queues are space-efficient, as they store elements in an array-based representation, minimizing the overhead associated with node-based data structures like linked lists.
+3. Easy to use
+4. Flexible
+
+## Disadvantages of using a heap queue (or heapq) in Python:
+1. Limited functionality: Heap queues are primarily designed for managing priority queues and heaps, and may not be suitable for more complex data structures and algorithms.
+2. No random access: Heap queues do not support random access to elements, making it difficult to access elements in the middle of the heap or modify elements that are not at the top of the heap.
+3. No sorting: Heap queues do not support sorting, so if you need to sort elements in a specific order, you will need to use a different data structure or algorithm.
+4. Not thread-safe: Heap queues are not thread-safe, meaning that they may not be suitable for use in multi-threaded applications where data synchronization is critical.
+
+## Difference between sorted and heapq in Python:
+The sorted function rearranges the elements of a collection into a new sorted list. This indicates that the original set is not modified, while the sorted list is kept in memory.  In contrast, using the heapq module, a collection is sorted without rearranging the original data.
+
+The 'sorted' also preserves the order of elements that are of equal value, but you can't say that for heapq. Time complexity distinguishes one from the other as well. The sorted's worst-case time complexity is O(n log n), whereas heapq's is O(n log k), where k is the size of the heap. As a result, heapq works better with large datasets.
+
+## Time Complexity of heapq in Python:
+Depending on the heap size, heapify can take up to O(n) time to complete.
+heappush is complex O(log n), where n is the number of elements in the heap.
+heappop takes O(log n), where n is the total number of elements in the heap.
+heappushpop has a complexity of O(log n), where n is the number of elements in the heap.
+heapreplace takes O(log n) time, where n is the number of elements in the heap.
+nlargest has a time complexity of O(n log k), where n is the total number of elements in the iterable and k is the maximum size desired for the returned set.
+nsmallest has an O(1) time complexity, where n is the total number of elements in the iterable and k is the minimum number of elements to return.(n log k).
